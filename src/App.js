@@ -4,6 +4,8 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import MyProps from './components/MyProps';
+import Comment from './components/ComposeComp/Comment'
+import comment from './components/ComposeComp/Db';
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +37,16 @@ class App extends Component {
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
             <MyProps title="React" onButtonClicked={this.onClickBtn} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-10 col-xs-offset-1">
+          <Comment
+            date={comment.date}
+            text={comment.text}
+            author={comment.author}
+          />
           </div>
         </div>
       </div>
