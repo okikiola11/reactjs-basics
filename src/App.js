@@ -7,6 +7,8 @@ import MyProps from './components/MyProps';
 import Comment from './components/ComposeComp/Comment'
 import comment from './components/ComposeComp/Db';
 
+import Clock from './components/Clock';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +42,7 @@ class App extends Component {
           </div>
         </div>
 
+        {/* Calling Multiple Components */}
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
           <Comment
@@ -49,7 +52,15 @@ class App extends Component {
           />
           </div>
         </div>
+
+        {/* State called in the component */}
+        <div className="row">
+          <div className="col-xs-10 col-xs-offset-1">
+            <Clock />
+          </div>
+        </div>
       </div>
+
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />
