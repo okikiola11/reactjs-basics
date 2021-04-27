@@ -6,6 +6,7 @@ import Home from './components/Home';
 import MyProps from './components/MyProps';
 import Comment from './components/ComposeComp/Comment'
 import comment from './components/ComposeComp/Db';
+import State from './components/State';
 
 import Clock from './components/Clock';
 
@@ -57,6 +58,12 @@ class App extends Component {
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
             <Clock />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-10 col-xs-offset-1">
+            <State />
           </div>
         </div>
       </div>
