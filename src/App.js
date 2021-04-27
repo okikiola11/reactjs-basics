@@ -7,9 +7,10 @@ import MyProps from './components/MyProps';
 import Comment from './components/ComposeComp/Comment'
 import comment from './components/ComposeComp/Db';
 import State from './components/State';
-import ToggleState from './components/ToggleState';
 
 import Clock from './components/Clock';
+import ToggleState from './components/ToggleState';
+import Counter from './components/Counter';
 
 class App extends Component {
   constructor(props) {
@@ -71,6 +72,12 @@ class App extends Component {
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
             <ToggleState />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-10 col-xs-offset-1">
+            <Counter />
           </div>
         </div>
       </div>
