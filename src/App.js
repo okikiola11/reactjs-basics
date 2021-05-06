@@ -12,6 +12,8 @@ import Clock from './components/Clock';
 import ToggleState from './components/ToggleState';
 import Counter from './components/Counter';
 
+import CounterMethods from './components/LifeCycle';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -78,6 +80,13 @@ class App extends Component {
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
             <Counter />
+          </div>
+        </div>
+
+        {/* LifeCycle Methods */}
+        <div className="row">
+          <div className="col-xs-10 col-xs-offset-1">
+            <CounterMethods />
           </div>
         </div>
       </div>
