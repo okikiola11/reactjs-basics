@@ -20,11 +20,14 @@ class App extends Component {
 
     // Create lifeCycle Methods starts
     this.state = {
-      mount: true
+      mount: true,
+      ignoreProp: 0
     }
 
     this.mountCounter = () => this.setState({mount: true})
     this.unmountCounter = () => this.setState({mount: false})
+    
+    this.ignoreProp = () => this.setState({ignoreProp: Math.random()})
     // LifeCycle Methods Ends Here
 
     this.onClickBtn = this.onClickBtn.bind(this);
@@ -95,16 +98,18 @@ class App extends Component {
         {/* LifeCycle Methods */}
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            
-
             <button onClick={this.mountCounter}
             >Mount Counter
             </button>
             <button onClick={this.unmountCounter}
             >Unmount Counter
             </button>
+            <button onClick={this.ignoreProp}>ignoreProp</button>
 
-            {this.state.mount ? <CounterMethods /> : null}
+            {this.state.mount ? 
+              <CounterMethods 
+                ignoreProp={this.state.ignoreProp}
+              /> : null}
           </div>
         </div>
       </div>

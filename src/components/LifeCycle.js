@@ -23,6 +23,13 @@ export default class CounterMethods extends React.Component {
     console.log('-- Component mount --')
   }
 
+  // Used to let React know if Render shd be triggered/not
+  shouldComponentUpdate(nextProps, nextState) {
+    // tell React when appropriate to call Render
+    if (this.state)
+    return true;
+  }
+
   render() {
     console.log('--- Render ---')
 
