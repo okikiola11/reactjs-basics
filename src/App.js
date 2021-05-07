@@ -21,13 +21,15 @@ class App extends Component {
     // Create lifeCycle Methods starts
     this.state = {
       mount: true,
-      ignoreProp: 0
+      ignoreProp: 0,
+      seed: 40
     }
 
     this.mountCounter = () => this.setState({mount: true})
     this.unmountCounter = () => this.setState({mount: false})
     
     this.ignoreProp = () => this.setState({ignoreProp: Math.random()})
+    this.seedGenerator = () => this.setState({seed: Number.parseInt(Math.random() * 100)})
     // LifeCycle Methods Ends Here
 
     this.onClickBtn = this.onClickBtn.bind(this);
@@ -105,10 +107,12 @@ class App extends Component {
             >Unmount Counter
             </button>
             <button onClick={this.ignoreProp}>ignoreProp</button>
+            <button onClick={this.seedGenerator}>Generate Seed</button>
 
             {this.state.mount ? 
               <CounterMethods 
                 ignoreProp={this.state.ignoreProp}
+                seed={this.state.seed}
               /> : null}
           </div>
         </div>

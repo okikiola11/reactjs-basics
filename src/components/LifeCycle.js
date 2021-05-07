@@ -7,7 +7,8 @@ export default class CounterMethods extends React.Component {
     super(props);
 
     this.state = {
-      counter: 0
+      counter: 0,
+      seed: 0
     }
 
     this.increment = () => {
@@ -18,6 +19,18 @@ export default class CounterMethods extends React.Component {
     }
   }
 
+  // Copy any values from props you might want to 
+  // transfer to state
+  static getDerivedStateFromProps(props, state) {
+    if(props.seed && state.seed !== props.seed) {
+      return {
+        seed: props.seed,
+        counter: props.seed
+      }
+    }
+    return null
+  }
+
   // introducing LifeCycle Methods
   componentDidMount() {
     console.log('-- Component mount --')
@@ -26,7 +39,12 @@ export default class CounterMethods extends React.Component {
   // Used to let React know if Render shd be triggered/not
   shouldComponentUpdate(nextProps, nextState) {
     // tell React when appropriate to call Render
-    if (this.state)
+    if (nextProps.ignoreProp && 
+      this.props.ignoreProp !== nextProps.ignoreProp) {
+      console.log('Should component update --- DO NOT RENDER')
+        return false;
+    }
+    console.log('Should component update --- RENDER')
     return true;
   }
 
