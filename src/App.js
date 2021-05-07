@@ -18,6 +18,15 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // Create lifeCycle Methods starts
+    this.state = {
+      mount: true
+    }
+
+    this.mountCounter = () => this.setState({mount: true})
+    this.unmountCounter = () => this.setState({mount: false})
+    // LifeCycle Methods Ends Here
+
     this.onClickBtn = this.onClickBtn.bind(this);
   }
 
@@ -86,7 +95,16 @@ class App extends Component {
         {/* LifeCycle Methods */}
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <CounterMethods />
+            
+
+            <button onClick={this.mountCounter}
+            >Mount Counter
+            </button>
+            <button onClick={this.unmountCounter}
+            >Unmount Counter
+            </button>
+
+            {this.state.mount ? <CounterMethods /> : null}
           </div>
         </div>
       </div>
